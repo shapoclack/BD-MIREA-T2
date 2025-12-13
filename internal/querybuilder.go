@@ -365,7 +365,7 @@ func (qb *QueryBuilder) Build() string {
 
 	// SELECT часть
 	query.WriteString("SELECT ")
-	if len(qb.columns) == 0 && len(qb.aggregates) == 0 {
+	if len(qb.columns) == 0 && len(qb.aggregates) == 0 && len(qb.windowFunctions) == 0 {
 		// Если не указаны столбцы и агрегаты, выбираем все
 		query.WriteString("*")
 	} else {
